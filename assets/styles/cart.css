@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1pt solid black;
+}
+
+header {
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-area: header;
+    border: 1pt solid black;
+    background-color: rgb(163, 205, 255);
+}
+
+header img {
+    grid-area: logo;
+    max-width: 15vw;
+    max-height: auto;
+}
+
+header h2 {
+    grid-area: kate;
+    border: 2pt solid rgb(60 110 170);
+    border-radius: 10%;
+    padding: 1rem;
+    text-align: center;
+}
+
+header div {
+    grid-area: ikon;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.trazilica {
+    font-size: 2rem;
+    max-width: 4rem;
+    max-height: 4rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    background-color: rgb(163, 205, 255);
+    border: 2pt solid rgb(60 110 170);
+    border-radius: 10%;
+}
+
+.kosarica {
+    font-size: 2rem;
+    max-width: 4rem;
+    max-height: 4rem;
+    text-decoration: none;
+    background-color: rgb(163, 205, 255);
+    border: 2pt solid rgb(60 110 170);
+    border-radius: 10%;
+}
+
+.tijelo {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1pt solid black;
+    background-color: rgb(163, 205, 255);
+}
+
+h3 {
+    border: 2pt solid rgb(60 110 170);
+    border-radius: 10%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.popis {
+    display:flex;
+    flex-flow: row nowrap;
+    border: 1pt solid black;
+    justify-content: space-around;
+}
+
+.nazivi {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 2pt solid rgb(60 110 170);
+    background-color: white;
+}
+
+.i {
+    text-align: center;
+    border-top: 2pt solid rgb(60 110 170);
+    min-height: 5rem;
+}
+
+.kolicine {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 2pt solid rgb(60 110 170);
+    background-color: white;
+}
+
+.kolicina {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-top: 2pt solid rgb(60 110 170);
+    padding: 10px;
+}
+
+@media all {
+    header {
+        grid-template-areas: 
+        'logo kate ikon'
+        'logo kate ikon';
+    }
+}
+
+@media all and (max-width: 1024px) {
+    header {
+        grid-template-areas: 
+        'logo logo logo'
+        'kate kate ikon';
+    }
+}

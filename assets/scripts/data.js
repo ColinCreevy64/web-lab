@@ -6,41 +6,41 @@ const data = {
             "image" : "grickalice.jpg",
             "products" : [
                 { 
-                    "name" : "Cips", "image" : "cips.jpg"
+                    "name" : "Cips", "image" : "assets\\images\\grickalice\\cips.jpg"
                 },
                 { 
-                    "name" : "Kokice", "image" : "popcorn.jpg"
+                    "name" : "Kokice", "image" : "assets\\images\\grickalice\\popcorn.jpg"
                 },                
                 { 
-                    "name" : "Smoki", "image" : "smoki.jpg"
+                    "name" : "Smoki", "image" : "assets\\images\\grickalice\\smoki.jpg"
                 },
                 { 
-                    "name" : "Stapici", "image" : "stapici.jpg"
+                    "name" : "Stapici", "image" : "assets\\images\\grickalice\\stapici.jpg"
                 }, 
                 { 
-                    "name" : "Tortilja Cips", "image" : "tortilja_cips.jpg"
+                    "name" : "Tortilja Cips", "image" : "assets\\images\\grickalice\\tortilja_cips.jpg"
                 }
             ]
         },
         
         { 
-            "name" : "konzervirano",
+            "name" : "Konzervirano",
             "image" : "konzervirano.jpg",
             "products" : [
                 { 
-                    "name" : "Konzerva Kukuruza", "image" : "corn.jpg"
+                    "name" : "Konzerva Kukuruza", "image" : "assets\\images\\konzervirano\\corn.jpg"
                 },
                 { 
-                    "name" : "Konzerva Graha", "image" : "grah.jpg"
+                    "name" : "Konzerva Graha", "image" : "assets\\images\\konzervirano\\grah.jpg"
                 },                
                 { 
-                    "name" : "Konzerva Paradajza", "image" : "paradajz.jpg"
+                    "name" : "Konzerva Paradajza", "image" : "assets\\images\\konzervirano\\paradajz.jpg"
                 },
                 { 
-                    "name" : "Konzerva Sardina", "image" : "sardine.jpg"
+                    "name" : "Konzerva Sardina", "image" : "assets\\images\\konzervirano\\sardine.jpg"
                 }, 
                 { 
-                    "name" : "Konzerva Tune", "image" : "tuna.jpg"
+                    "name" : "Konzerva Tune", "image" : "assets\\images\\konzervirano\\tuna.jpg"
                 }
             ]
         },
@@ -50,19 +50,19 @@ const data = {
             "image" : "kruh.jpg",
             "products" : [
                 { 
-                    "name" : "Integralni Kruh", "image" : "integralni.jpg"
+                    "name" : "Integralni Kruh", "image" : "assets\\images\\kruh\\integralni.jpg"
                 },
                 { 
-                    "name" : "Krafna", "image" : "krafna.jpg"
+                    "name" : "Krafna", "image" : "assets\\images\\kruh\\krafna.jpg"
                 },                
                 { 
-                    "name" : "Kroasan", "image" : "kroasan.jpg"
+                    "name" : "Kroasan", "image" : "assets\\images\\kruh\\kroasan.jpg"
                 },
                 { 
-                    "name" : "Kukuruzni kruh", "image" : "kukuruzni.jpg"
+                    "name" : "Kukuruzni kruh", "image" : "assets\\images\\kruh\\kukuruzni.jpg"
                 }, 
                 { 
-                    "name" : "Perec", "image" : "perec.jpg"
+                    "name" : "Perec", "image" : "assets\\images\\kruh\\perec.jpg"
                 }
             ]
         },
@@ -72,19 +72,19 @@ const data = {
             "image" : "meso.jpg",
             "products" : [
                 { 
-                    "name" : "Hrenovke", "image" : "hrenovke.jpg"
+                    "name" : "Hrenovke", "image" : "assets\\images\\meso\\hrenovke.jpg"
                 },
                 { 
-                    "name" : "Juneci Ramstek", "image" : "juneci_ramstek.jpg"
+                    "name" : "Juneci Ramstek", "image" : "assets\\images\\meso\\juneci_ramstek.jpg"
                 },                
                 { 
-                    "name" : "Pileci Batak i Zabatak", "image" : "pileci_batak_zabatak.jpg"
+                    "name" : "Pileci Batak i Zabatak", "image" : "assets\\images\\meso\\pileci_batak_zabatak.jpg"
                 },
                 { 
-                    "name" : "Pileci File", "image" : "pilci_file.jpg"
+                    "name" : "Pileci File", "image" : "assets\\images\\meso\\pileci_file.jpg"
                 }, 
                 { 
-                    "name" : "Svinjska Vratina", "image" : "svinjska_vratina.jpg"
+                    "name" : "Svinjska Vratina", "image" : "assets\\images\\meso\\svinjska_vratina.jpg"
                 }
             ]
         },
@@ -94,19 +94,19 @@ const data = {
             "image" : "mlijecni_proizvodi.jpg",
             "products" : [
                 { 
-                    "name" : "Sir Camembert", "image" : "camembert.jpg"
+                    "name" : "Sir Camembert", "image" : "assets\\images\\mlijecni_proizvodi\\camembert.jpg"
                 },
                 { 
-                    "name" : "Tekuci Jogurt", "image" : "jogurt.jpg"
+                    "name" : "Tekuci Jogurt", "image" : "assets\\images\\mlijecni_proizvodi\\jogurt.jpg"
                 },                
                 { 
-                    "name" : "Mlijeko", "image" : "mlijeko.jpg"
+                    "name" : "Mlijeko", "image" : "assets\\images\\mlijecni_proizvodi\\mlijeko.jpg"
                 },
                 { 
-                    "name" : "Sir Mozzarella", "image" : "mozzarella.jpg"
+                    "name" : "Sir Mozzarella", "image" : "assets\\images\\mlijecni_proizvodi\\mozzarella.jpg"
                 }, 
                 { 
-                    "name" : "Vocni Puding", "image" : "puding.jpg"
+                    "name" : "Vocni Puding", "image" : "assets\\images\\mlijecni_proizvodi\\puding.jpg"
                 }
             ]
         },
@@ -116,19 +116,19 @@ const data = {
             "image" : "orasasti_plodovi.jpg",
             "products" : [
                 { 
-                    "name" : "Bademi", "image" : "bademi.jpg"
+                    "name" : "Bademi", "image" : "assets\\images\\orasasti_plodovi\\bademi.jpg"
                 },
                 { 
-                    "name" : "Indijski Orascici", "image" : "indijski_orascici.jpg"
+                    "name" : "Indijski Orascici", "image" : "assets\\images\\orasasti_plodovi\\indijski_orascici.jpg"
                 },                
                 { 
-                    "name" : "Kikiriki", "image" : "kikiriki.jpg"
+                    "name" : "Kikiriki", "image" : "assets\\images\\orasasti_plodovi\\kikiriki.jpg"
                 },
                 { 
-                    "name" : "Ljesnjaci", "image" : "ljesnjaci.jpg"
+                    "name" : "Ljesnjaci", "image" : "assets\\images\\orasasti_plodovi\\ljesnjaci.jpg"
                 }, 
                 { 
-                    "name" : "Orasi", "image" : "orasi.jpg"
+                    "name" : "Orasi", "image" : "assets\\images\\orasasti_plodovi\\orasi.jpg"
                 }
             ]
         },
@@ -138,19 +138,19 @@ const data = {
             "image" : "povrce.jpg",
             "products" : [
                 { 
-                    "name" : "Gljive", "image" : "gljive.jpg"
+                    "name" : "Gljive", "image" : "assets\\images\\povrce\\gljive.jpg"
                 },
                 { 
-                    "name" : "Kupus", "image" : "kupus.jpg"
+                    "name" : "Kupus", "image" : "assets\\images\\povrce\\kupus.jpg"
                 },                
                 { 
-                    "name" : "Poriluk", "image" : "poriluk.jpg"
+                    "name" : "Poriluk", "image" : "assets\\images\\povrce\\poriluk.jpg"
                 },
                 { 
-                    "name" : "Luk", "image" : "luk.jpg"
+                    "name" : "Luk", "image" : "assets\\images\\povrce\\luk.jpg"
                 }, 
                 { 
-                    "name" : "Spinat", "image" : "spinat.jpg"
+                    "name" : "Spinat", "image" : "assets\\images\\povrce\\spinat.jpg"
                 }
             ]
         },
@@ -160,19 +160,19 @@ const data = {
             "image" : "riba.jpg",
             "products" : [
                 { 
-                    "name" : "Brancin", "image" : "brancin.jpg"
+                    "name" : "Brancin", "image" : "assets\\images\\riba\\brancin.jpg"
                 },
                 { 
-                    "name" : "Losos", "image" : "losos.jpg"
+                    "name" : "Losos", "image" : "assets\\images\\riba\\losos.jpg"
                 },                
                 { 
-                    "name" : "Tuna", "image" : "tuna.jpg"
+                    "name" : "Tuna", "image" : "assets\\images\\riba\\tuna.jpg"
                 },
                 { 
-                    "name" : "Orada", "image" : "orada.jpg"
+                    "name" : "Orada", "image" : "assets\\images\\riba\\orada.jpg"
                 }, 
                 { 
-                    "name" : "Skusa", "image" : "skusa.jpg"
+                    "name" : "Skusa", "image" : "assets\\images\\riba\\skusa.jpg"
                 }
             ]
         },
@@ -182,19 +182,19 @@ const data = {
             "image" : "voce.jpg",
             "products" : [
                 { 
-                    "name" : "Banane", "image" : "banane.jpg"
+                    "name" : "Banane", "image" : "assets\\images\\voce\\banane.jpg"
                 },
                 { 
-                    "name" : "Jabuke", "image" : "jabuke.jpg"
+                    "name" : "Jabuke", "image" : "assets\\images\\voce\\jabuke.jpg"
                 },                
                 { 
-                    "name" : "Jagode", "image" : "jagode.jpg"
+                    "name" : "Jagode", "image" : "assets\\images\\voce\\jagode.jpg"
                 },
                 { 
-                    "name" : "Narance", "image" : "narance.jpg"
+                    "name" : "Narance", "image" : "assets\\images\\voce\\narance.jpg"
                 }, 
                 { 
-                    "name" : "Sljive", "image" : "sljive.jpg"
+                    "name" : "Sljive", "image" : "assets\\images\\voce\\sljive.jpg"
                 }
             ]
         },
@@ -204,21 +204,22 @@ const data = {
             "image" : "zacini.jpg",
             "products" : [
                 { 
-                    "name" : "Cesnjak u prahu", "image" : "cesnjak_prah.jpg"
+                    "name" : "Cesnjak u prahu", "image" : "assets\\images\\zacini\\cesnjak_prah.jpg"
                 },
                 { 
-                    "name" : "Kajenski Papar", "image" : "kajenski_papar.jpg"
+                    "name" : "Kajenski Papar", "image" : "assets\\images\\zacini\\kajenski_papar.jpg"
                 },                
                 { 
-                    "name" : "Papar", "image" : "papar.jpg"
+                    "name" : "Papar", "image" : "assets\\images\\zacini\\papar.jpg"
                 },
                 { 
-                    "name" : "Paprika", "image" : "paprika.jpg"
+                    "name" : "Paprika", "image" : "assets\\images\\zacini\\paprika.jpg"
                 }, 
                 { 
-                    "name" : "Sol", "image" : "sol.jpg"
+                    "name" : "Sol", "image" : "assets\\images\\zacini\\sol.jpg"
                 }
             ]
         }
     ]
 }
+
