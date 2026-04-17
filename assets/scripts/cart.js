@@ -1,6 +1,8 @@
+let selected = 0;
 let nazivi = document.querySelector(".nazivi");
 let kolicine = document.querySelector(".kolicine");
-const proizvodi = document.querySelectorAll(".proizvod");
+let proizvodi = document.querySelectorAll(".proizvod");
+let broj_proizvoda = data.categories[selected].products.length;
 const zbroj = document.querySelector(".zbroj");
 
 function zbrojac() {
@@ -16,7 +18,6 @@ function zbrojac() {
         }
     }
 }
-
 
 function ucitaj_kosaru() {
     let k = JSON.parse(localStorage.getItem("kosara"));
@@ -57,12 +58,51 @@ function dodati(ime) {
 
 function ispis_naziva() {
     let kos = ucitaj_kosaru();
-    if (proizvodi) {
-        for (let i = 0; i < proizvodi.length; i++) {
+    proizvodi = document.querySelectorAll(".proizvod");
+
+    console.log(kos);
+    if (document.querySelector(".moto")) {
+        let rod = document.querySelector(".proizvodi");
+        rod.innerText = "";
+        broj_proizvoda = data.categories[selected].products.length;
+        console.log(broj_proizvoda);
+        for (let i = 0; i < broj_proizvoda; i++) {
+            let j = document.createElement("div");
+            j.className = "proizvod";
+            let k = document.createElement("div");
+            k.className = "slika";
+            let l = document.createElement("img");
+            l.alt = "Slika";
+            k.append(l);
+            let m = document.createElement("p");
+            m.className = "proi";
+            m.innerHTML = "Proizvod x<br>Karegorije y";
+            rod.append(j);
+            j.append(k);
+            k.append(l);
+            j.append(m);
+
+            let kolica = document.createElement("p");
+            kolica.innerText = "🛒";
+            kolica.style.display = "none";
+            kolica.setAttribute("class", "kolica");
+            kolica.addEventListener("click", () => dodaj_kosaricu(i));
+            j.querySelector("div").append(kolica);
+            j.querySelector("img").addEventListener("mouseenter", () => kolica.style.display = "block");
+            j.querySelector("img").addEventListener("mouseleave", () => kolica.style.display = "none");
+
+            let broj = document.createElement("p");
+            let kos = ucitaj_kosaru();
+            broj.innerText = kos.get(data.categories[selected].products[i].name);
+            broj.style.display = "none";
+            broj.setAttribute("class", "broj");
+            j.querySelector("div").append(broj);
+
             if (Number(kos.get(data.categories[selected].products[i].name)) > 0) {
-                proizvodi[i].querySelector(".broj").style.display = "block";
+                j.querySelector(".broj").style.display = "block";
             }
         }
+        proizvodi = document.querySelectorAll(".proizvod");
 
         zbrojac();
     }
@@ -103,3 +143,4 @@ function ispis_naziva() {
 }
 
 document.addEventListener("DOMContentLoaded", () => ispis_naziva());
+
