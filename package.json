@@ -1,0 +1,21 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Hrana",
+  "homepage": "https://github.com/ColinCreevy64/web-lab#readme",
+  "bugs": {
+    "url": "https://github.com/ColinCreevy64/web-lab/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColinCreevy64/web-lab.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
