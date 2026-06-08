@@ -11,6 +11,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-//app.use('/cart', cartRouter);
+app.use('/cart', cartRouter);
 
 app.listen(3000);

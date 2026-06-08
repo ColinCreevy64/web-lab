@@ -1,9 +1,23 @@
-let selected = 0;
-let nazivi = document.querySelector(".nazivi");
-let kolicine = document.querySelector(".kolicine");
-let proizvodi = document.querySelectorAll(".proizvod");
-let broj_proizvoda = data.categories[selected].products.length;
-const zbroj = document.querySelector(".zbroj");
+async function dohvat_kategorija() {
+    const j = await fetch('/getCategories');
+    const data = await j.json();
+    return data;
+}
+
+async function ispis_kategorija() {
+    const data = await dohvat_kategorija();
+
+    for (let i = 0; i < kategorije.length; i++) {
+        kategorije[i].innerText = data[i];
+        kategorije[i].addEventListener("click", () => promjena_kategorije(i));
+    }
+}
+
+async function dohvat_proizvoda(id) {
+    const j = await fetch('/getProducts/' + id);
+    const data = await j.json();
+    return data;
+}
 
 function zbrojac() {            //racunanje ukupnog broja proizvoda
     if (zbroj) {
@@ -56,7 +70,10 @@ function dodati(ime) {          //dodavanje u kosaricu, koristen za + u cart
     ispis_naziva();
 }
 
-function ispis_naziva() {           //azuriranje 
+async function ispis_naziva() {           //azuriranje 
+    let p = await dohvat_proizvoda(selected);
+    console.log(p);
+
     let kos = ucitaj_kosaru();
     proizvodi = document.querySelectorAll(".proizvod");
 
@@ -64,7 +81,7 @@ function ispis_naziva() {           //azuriranje
     if (document.querySelector(".moto")) {          //kad na glavnoj stranici
         let rod = document.querySelector(".proizvodi");
         rod.innerText = "";
-        broj_proizvoda = data.categories[selected].products.length;
+        broj_proizvoda = p.length;
         console.log(broj_proizvoda);
         for (let i = 0; i < broj_proizvoda; i++) {
             let j = document.createElement("div");
@@ -93,12 +110,12 @@ function ispis_naziva() {           //azuriranje
 
             let broj = document.createElement("p");
             let kos = ucitaj_kosaru();
-            broj.innerText = kos.get(data.categories[selected].products[i].name);
+            broj.innerText = kos.get(p[i].name);
             broj.style.display = "none";
             broj.setAttribute("class", "broj");
             j.querySelector("div").append(broj);
 
-            if (Number(kos.get(data.categories[selected].products[i].name)) > 0) {
+            if (Number(kos.get(p[i].name)) > 0) {
                 j.querySelector(".broj").style.display = "block";
             }
         }
@@ -142,5 +159,10 @@ function ispis_naziva() {           //azuriranje
     }
 }
 
+let selected = 0;
+let nazivi = document.querySelector(".nazivi");
+let kolicine = document.querySelector(".kolicine");
+let proizvodi = document.querySelectorAll(".proizvod");
+const zbroj = document.querySelector(".zbroj");
 document.addEventListener("DOMContentLoaded", () => ispis_naziva());
 

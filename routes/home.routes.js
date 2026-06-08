@@ -8,4 +8,19 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/getCategories', function(req, res) {
+    kategorije = [];
+    for (let i = 0; i < data.categories.length; i++) {
+        kategorije.push(data.categories[i].name);
+    }
+
+    res.json(kategorije);
+})
+
+router.get('/getProducts/:id', function(req, res) {
+    let id = parseInt(req.params.id);
+
+    res.json(data.categories[id].products);
+})
+
 module.exports = router;
