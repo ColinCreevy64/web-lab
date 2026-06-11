@@ -24,12 +24,4 @@ router.get('/getProducts/:id', function(req, res) {
     res.json(data.categories[id].products);
 })
 
-router.get("/views/partials/header", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/partials/header.ejs"));
-});
-
-router.get("/views/partials/footer", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/partials/footer.ejs"));
-});
-
 module.exports = router;

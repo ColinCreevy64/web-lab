@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles\main.css" rel="stylesheet">
-    <script src="scripts\load.js"></script>
     <script src="scripts\cart.js" defer></script>
     <script src="scripts\app.js" defer></script>
-    <title><%= title %>></title>
+    <title><%= title %></title>
 </head>
 <body>
-    <header></header>
+    <%- include('partials/header') %>
     <nav class="kategorije">
             <ol>
                 <li>Kategorija 1</li>
@@ -35,6 +34,6 @@
         <h3 class="moto">Dobro dosli u ducan! Potrosite brdo novca :D</h3>
     </div>
     <div class="proizvodi"></div>
-    <footer></footer>
+    <%- include('partials/footer') %>
 </body>
 </html>

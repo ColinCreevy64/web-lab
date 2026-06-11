@@ -33,12 +33,6 @@ async function dodaj_kosaricu(index) {            //dodavanje u kosaru
     await zbrojac();
 }
 
-async function load_header() {
-    let res = await fetch("/views/partials/header");
-    let html = await res.text();
-    document.querySelector("header").innerHTML = html;
-}
-
 //document.addEventListener("DOMContentLoaded", () => promjena_kategorije(selected));
 
 window.addEventListener("pageshow", () => promjena_kategorije(selected));

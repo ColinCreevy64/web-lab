@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="\styles\cart.css" rel="stylesheet">
     <script src="\scripts\cart.js" defer></script>
-    <title>Document</title>
+    <title>Kosara</title>
 </head>
 <body>
-    <header>
-        <img src="\images\logo.svg" alt="LOGOTIP"/>
-        <h2>Spremni za placanje?</h2>
-        <div>
-            <a class="trazilica" href="cart.html">🔍</a>
-            <a class="kosarica" href="cart.html">🛒</a>
-        </div>
-    </header>
+    <%- include('partials/header') %>
     <div class="tijelo">
         <h3>KOSARICA</h3>
         <div class="popis">
@@ -27,5 +20,6 @@
             </div>
         </div>
     </div>
+    <%- include('partials/footer') %>
 </body>
 </html>

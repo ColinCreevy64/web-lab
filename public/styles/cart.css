@@ -8,6 +8,12 @@ body {
     border: 1pt solid black;
 }
 
+footer {
+    border: 1pt solid black;
+    background-color: rgb(163, 205, 255);
+    height: 50px;
+}
+
 header {
     display:grid;
     grid-template-columns: auto auto;
@@ -50,6 +56,10 @@ header div {
     border-radius: 10%;
 }
 
+.kos {
+    position: relative;
+}
+
 .kosarica {
     font-size: 2rem;
     max-width: 4rem;
@@ -58,6 +68,20 @@ header div {
     background-color: rgb(163, 205, 255);
     border: 2pt solid rgb(60 110 170);
     border-radius: 10%;
+}
+
+.zbroj {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    color: black;
+    font-size: 1rem;
+    background-color: rgb(240, 79, 79);
+    border: 2pt solid red;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
 }
 
 .tijelo {

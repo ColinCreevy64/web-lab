@@ -151,6 +151,7 @@ async function ispis_naziva() {           //azuriranje
                 }
             }
         } 
+        zbrojac();
     }
 }
 
@@ -158,5 +159,7 @@ let selected = 0;
 let nazivi = document.querySelector(".nazivi");
 let kolicine = document.querySelector(".kolicine");
 let proizvodi = document.querySelectorAll(".proizvod");
+let naslov = document.querySelector("h2");
+let zbroj = document.querySelector(".zbroj");
 document.addEventListener("DOMContentLoaded", () => ispis_naziva());
 
