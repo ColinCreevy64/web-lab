@@ -8,6 +8,12 @@ body {
     grid-template-rows: auto auto auto auto auto auto;
 }
 
+footer {
+    border: 1pt solid black;
+    background-color: rgb(163, 205, 255);
+    height: 50px;
+}
+
 header {
     display:grid;
     grid-template-columns: auto auto;

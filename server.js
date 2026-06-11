@@ -1,6 +1,18 @@
 const express = require('express');
 const app = express();
 var path = require('path');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+
+app.use(session({
+    secret: 'Tajni labos',
+    resave: false,
+    store: new FileStore(),
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60
+    }
+}))
 
 const homeRouter = require('./routes/home.routes');
 const cartRouter = require('./routes/cart.routes');

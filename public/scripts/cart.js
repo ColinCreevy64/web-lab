@@ -19,65 +19,54 @@ async function dohvat_proizvoda(id) {
     return data;
 }
 
-function zbrojac() {            //racunanje ukupnog broja proizvoda
+async function dohvat_kosare() {
+    const j = await fetch('/cart/getAll');
+    const data = await j.json();
+    return data;
+}
+
+async function zbrojac() {            //racunanje ukupnog broja proizvoda
     if (zbroj) {
-        let kos = ucitaj_kosaru();
-        if (kos.size === 0) {
+        let kos = await dohvat_kosare();
+        let z = kos.reduce((a, b) => a + b, 0);
+        if (z === 0) {
             zbroj.innerHTML = "0";
             zbroj.style.display = "none";
         }
         else {
-            zbroj.innerHTML = [...kos.values()].map(k => Number(k)).reduce((sum, value) => sum + value, 0);
+            zbroj.innerHTML = z;
             zbroj.style.display = "block";
         }
     }
 }
 
-function ucitaj_kosaru() {
-    let k = JSON.parse(localStorage.getItem("kosara"));
-    if (!Array.isArray(k)) return new Map();
+async function dodaj(p) {             //dodavanje proizvoda u kosaru, koristen u app.js
+    const k = await dohvat_proizvoda(selected);
+    const j = await fetch('/cart/add/' + (selected * k.length + p))
 
-    return new Map(k);
-}
-
-function dodaj(p) {             //dodavanje proizvoda u kosaru, koristen u app.js
-    let kos = ucitaj_kosaru();
-    if (kos.has(p)) {
-        kos.set(p, kos.get(p) + 1);
-    }
-    else {
-        kos.set(p, 1);
-    }
-    localStorage.setItem("kosara", JSON.stringify([...kos]));
-}
-
-function oduzeti(ime) {        //micanje proizvoda iz kosare u cart
-    let kos = ucitaj_kosaru();
-    let vrijednost = kos.get(ime);
-    if (--vrijednost <= 0) kos.delete(ime);
-    else kos.set(ime, vrijednost);
-
-    localStorage.setItem("kosara", JSON.stringify([...kos]));
     ispis_naziva();
 }
 
-function dodati(ime) {          //dodavanje u kosaricu, koristen za + u cart
-    let kos = ucitaj_kosaru();
-    let vrijednost = kos.get(ime);
-    kos.set(ime, ++vrijednost);
+async function dodaj_home(p) {             //dodavanje proizvoda u kosaru, koristen u app.js
+    const k = await dohvat_proizvoda(selected);
+    const j = await fetch('/cart/add/' + (selected * k.length + p))
+}
 
-    localStorage.setItem("kosara", JSON.stringify([...kos]));
+async function oduzeti(p) {        //micanje proizvoda iz kosare u cart
+    const k = await dohvat_proizvoda(selected);
+    const j = await fetch('/cart/remove/' + (selected * k.length + p))
+
     ispis_naziva();
 }
 
 async function ispis_naziva() {           //azuriranje 
     let p = await dohvat_proizvoda(selected);
+    let kos = await dohvat_kosare();
+    let kat = await dohvat_kategorija();
     console.log(p);
 
-    let kos = ucitaj_kosaru();
     proizvodi = document.querySelectorAll(".proizvod");
 
-    console.log(kos);
     if (document.querySelector(".moto")) {          //kad na glavnoj stranici
         let rod = document.querySelector(".proizvodi");
         rod.innerText = "";
@@ -109,13 +98,12 @@ async function ispis_naziva() {           //azuriranje
             j.querySelector("img").addEventListener("mouseleave", () => kolica.style.display = "none");
 
             let broj = document.createElement("p");
-            let kos = ucitaj_kosaru();
-            broj.innerText = kos.get(p[i].name);
+            broj.innerText = kos[selected * p.length + i];
             broj.style.display = "none";
             broj.setAttribute("class", "broj");
             j.querySelector("div").append(broj);
 
-            if (Number(kos.get(p[i].name)) > 0) {
+            if (Number(kos[selected * p.length + i]) > 0) {
                 j.querySelector(".broj").style.display = "block";
             }
         }
@@ -127,34 +115,41 @@ async function ispis_naziva() {           //azuriranje
     if (nazivi) {               //kad na kosarica stranici
         nazivi.innerHTML = "<h4>NAZIV PROIZVODA</h4>";
         kolicine.innerHTML = "<h4>KOLICINA</h4>";
-        for (const key of kos.keys()) {
-            let i = document.createElement("div");
-            i.setAttribute("class", "i");
+        for (let c = 0; c < kat.length; c++) {
+            let pr = await dohvat_proizvoda(c);
 
-            let ime = document.createElement("h5");
-            ime.innerText = key;
-            i.append(ime);
+            for (let d = 0; d < pr.length; d++) {
+                if (Number(kos[c * pr.length + d]) !== 0) {
 
-            nazivi.append(i);
+                    let i = document.createElement("div");
+                    i.setAttribute("class", "i");
 
-            let kolicina = document.createElement("div");
-            kolicina.setAttribute("class", "kolicina");
+                    let ime = document.createElement("h5");
+                    ime.innerText = pr[d].name;
+                    i.append(ime);
 
-            let minus = document.createElement("button");
-            minus.innerText = "-";
-            kolicina.append(minus);
-            minus.addEventListener("click", () => oduzeti(key))
+                    nazivi.append(i);
 
-            let kol = document.createElement("h5");
-            kol.innerText = kos.get(key);
-            kolicina.append(kol);
+                    let kolicina = document.createElement("div");
+                    kolicina.setAttribute("class", "kolicina");
 
-            let plus = document.createElement("button");
-            plus.innerText = "+";
-            kolicina.append(plus);
-            plus.addEventListener("click", () => dodati(key))
+                    let minus = document.createElement("button");
+                    minus.innerText = "-";
+                    kolicina.append(minus);
+                    minus.addEventListener("click", () => oduzeti(c * pr.length + d))
 
-            kolicine.append(kolicina);
+                    let kol = document.createElement("h5");
+                    kol.innerText = kos[c * pr.length + d];
+                    kolicina.append(kol);
+
+                    let plus = document.createElement("button");
+                    plus.innerText = "+";
+                    kolicina.append(plus);
+                    plus.addEventListener("click", () => dodaj(c * pr.length + d))
+
+                    kolicine.append(kolicina);
+                }
+            }
         } 
     }
 }
@@ -163,6 +158,5 @@ let selected = 0;
 let nazivi = document.querySelector(".nazivi");
 let kolicine = document.querySelector(".kolicine");
 let proizvodi = document.querySelectorAll(".proizvod");
-const zbroj = document.querySelector(".zbroj");
 document.addEventListener("DOMContentLoaded", () => ispis_naziva());
 
